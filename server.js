@@ -8,4 +8,5 @@ app.get("/:parameter", function(req, res) {
   res.send("Hello, " + req.params.parameter)
 });
 
-http.createServer(app).listen(1337);
+var port = process.env.PORT || 1337;
+http.createServer(app).listen(port);
