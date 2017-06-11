@@ -7,37 +7,30 @@ var app = express();
 
 app.get("/:parameter", function(req, res) {
   var parameter = req.params.parameter;
+  var toReturn = {};
 
   if(moment(parameter, "X", true).isValid()) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
+    toReturn = {
       "unix": moment(parameter, "X", true).format('X'),
       "natural": moment(parameter, "X", true).format('LL')
-    }));
+    };
   } else if(moment(parameter, "LL", true).isValid()) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
+    toReturn = {
       "unix": moment(parameter, "LL", true).format('X'),
       "natural": moment(parameter, "LL", true).format('LL')
-    }));
+    };
   } else {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
+    toReturn = {
       "unix": null,
       "natural": null
-    }));
+    };
   }
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(toReturn));
+});
 
-  /*
-  if (moment(parameter, "x").isValid()) {
-    res.send("Got a unix date: " + parameter);
-  } else if (moment(parameter, "LLL").isValid()) {
-    res.send("Got a natural date: " + parameter);
-  } else {
-    res.send("Bad date: " + parameter);
-  }
-*/
-
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 var port = process.env.PORT || 1337;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Timestamp Microservice</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+</head>
+<body>
+
+<div class="container">
+<h1>Timestamp Microservice</h1>
+<h3><small>by Kevin Madill (<a href="http://www.github.com/kmadill">http://www.github.com/kmadill)</a></small></h3>
+<br />
+
+<p class="lead">
+  This simple API was created as part of Free Code Camp's curriculum.
+  The exercise can be found <a href="https://www.freecodecamp.com/challenges/timestamp-microservice">here</a>.
+  If you wish to view the source code, you can find that <a href="https://github.com/kmadill/timestamp-fcc-km">here</a>.</p>
+
+<blockquote>
+<h3>User stories:</h3>
+<ol>
+  <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
+  <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+  <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+</ol>
+</blockquote>
+
+<h3>Example usage:</h3>
+<code>https://timestamp-ms.herokuapp.com/December%2015,%202015</code>
+<br />
+<code>https://timestamp-ms.herokuapp.com/1450137600</code>
+
+<h3>Example output:</h3>
+<code>
+{ "unix": 1450137600, "natural": "December 15, 2015" }
+</code>
+
+</div>
+</body>
+</html>
