@@ -14,8 +14,8 @@ Give it a try [here](https://timestamp-fcc-km.herokuapp.com).
 
 ### Example Usage
 ```
-https://timestamp-ms.herokuapp.com/December%2015,%202015
-https://timestamp-ms.herokuapp.com/1450137600
+https://timestamp-fcc-km.herokuapp.com/December%2015,%202015
+https://timestamp-fcc-km.herokuapp.com/1450137600
 ```
 
 ### Example Output
